@@ -86,10 +86,10 @@ async def killdabot(event):
 
 @register(outgoing=True, pattern=r"^\.restart$")
 async def killdabot(event):
-    await event.edit("☙`Restarting Lonelywolf-ubot...`❧")
+    await event.edit("☙`Restarting TG-Lonely-WolfUbot...`❧")
     if BOTLOG:
         await event.client.send_message(
-            BOTLOG_CHATID, "#RESTARTBOT \n" "`Lonelywolf-ubot Telah Di Restart`"
+            BOTLOG_CHATID, "#RESTARTBOT \n" "`TG-Lonely-WolfUbot Telah Di Restart`"
         )
     # Spin a new instance of bot
     args = [sys.executable, "-m", "userbot"]
@@ -100,7 +100,7 @@ async def killdabot(event):
 async def reedme(e):
     await e.edit(
         "Here's something for you to read :\n"
-        "\n[Lonelywolf-ubot](https://raw.githubusercontent.com/W29F/Lonelywolf-ubot/master/README.md)"
+        "\n[TG-Lonely-WolfUbot](https://raw.githubusercontent.com/W29F/TG-Lonely-WolfUbot/main/README.md)"
         "\n[Setup Guide - Basic](https://telegra.ph/How-to-host-a-Telegram-Userbot-11-02)"
         "\n[Setup Guide - Google Drive](https://telegra.ph/How-To-Setup-GDrive-11-02)"
         "\n[Setup Guide - LastFM Module](https://telegra.ph/How-to-set-up-LastFM-module-for-Paperplane-userbot-11-02)"
@@ -128,12 +128,12 @@ async def repeat(rep):
 async def repo_is_here(wannasee):
     """ For .repo command, just returns the repo URL. """
     await wannasee.edit(
-        f"**Hey**, __I am using__ ☙ **Lonelywolf-ubott** ❧\n\n"
+        f"**Hey**, __I am using__ ☙ **TG-Lonely-WolfUbot** ❧\n\n"
         f"      __Thanks For Using me__\n\n"
         f"✣ **Userbot Version :** `{BOT_VER}@{UPSTREAM_REPO_BRANCH}`\n"
         f"✣ **Group Support :** [Sharing Userbot](t.me/privatener)\n"
         f"✣ **Owner Repo :** [W29F](t.me/privatener)\n"
-        f"✣ **Repo :** [Lonelywolf-ubot](https://github.com/W29F/Lonelywolf-ubot)\n"
+        f"✣ **Repo :** [TG-Lonely-WolfUbot](https://github.com/W29F/TG-Lonely-WolfUbot)\n"
     )
 
 
@@ -141,7 +141,7 @@ async def repo_is_here(wannasee):
 async def repo_is_here(wannasee):
     """ For .repo command, just returns the repo URL. """
     await wannasee.edit(
-        f"✥ **GET STRING SESSION TELEGRAM :** [KLIK DISINI](https://repl.it/@mrismanaziz/stringenSession?lite=1&outputonly=1)\n"
+        f"✥ **GET STRING SESSION TELEGRAM :** [KLIK DISINI](https://replit.com/@ErichDaniken/Generate-Telegram-String-Session)\n"
     )
 
 
