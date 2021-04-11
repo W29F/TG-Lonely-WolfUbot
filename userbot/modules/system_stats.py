@@ -227,7 +227,7 @@ async def amireallyalive(alive):
     user = await bot.get_me()
     uptime = await get_readable_time((time.time() - StartTime))
     output = (
-        f" **┗┓  ♥ Lonelywolf-ubot  ♥ ┏┛** \n"
+        f" **┗┓  ♥ TG-Lonely-WolfUbot  ♥ ┏┛** \n"
         f"\n__**{ALIVE_TEKS_CUSTOM}**__\n"
         f"**━━━━━━━━━━━━━━━**\n"
         f"** ♥ Master  ♥** \n"
@@ -267,7 +267,7 @@ async def amireallyalive(alive):
     user = await bot.get_me()
     uptime = await get_readable_time((time.time() - StartTime))
     output = (
-        f"۝⩵►Lonelywolf-ubot◄⩵۝\n \n"
+        f"۝⩵►TG-Lonely-WolfUbot◄⩵۝\n \n"
         f"╭━━━━━━━━━━━━━━━━━━━━━╮\n"
         f"┣[•👤 `USER     :`{DEFAULTUSER}\n"
         f"┣[ 👁‍🗨 `Username :`@{user.username}\n"
@@ -306,7 +306,7 @@ async def amireallyalive(alive):
     user = await bot.get_me()
     uptime = await get_readable_time((time.time() - StartTime))
     output = (
-        f"**༒ ┗┓ Lonelywolf-ubott ┏┛ ༒** \n\n"
+        f"**༒ ┗┓ TG-Lonely-WolfUbot ┏┛ ༒** \n\n"
         f"┏━━━━━━━━━━━━━━ \n"
         f"┣ ❧ `Master   : `{DEFAULTUSER} \n"
         f"┣ ❧ `Username : `@{user.username} \n"
@@ -317,7 +317,7 @@ async def amireallyalive(alive):
         f"┣ ❧ `Modules  : `{len(modules)} Modules \n"
         f"┣ ❧ `Uptime   : `{uptime} \n"
         f"┗━━━━━━━━━━━━━━ \n"
-        f"❥ **Repo Userbot :** [Lonelywolf-ubot](https://github.com/W29F/Lonelywolf-ubot) \n"
+        f"❥ **Repo Userbot :** [TG-Lonely-WolfUbot](https://github.com/W29F/TG-Lonely-WolfUbot) \n"
         f"❥ **Grup Userbot :** [Tekan Disini](-) \n"
         f"❥ **Owner :** [PrivateNer](t.me/privatener) \n"
         f"┗━━━━━━━━━━━━━━ \n"
