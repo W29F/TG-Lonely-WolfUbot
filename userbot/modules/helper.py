@@ -11,8 +11,8 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 async def usit(e):
     await e.edit(
         f"**Hai {DEFAULTUSER} Kalo Anda Tidak Tau Perintah Untuk Memerintah Ku Ketik** `.help` Atau Bisa Minta Bantuan Ke:\n"
-        "\n[Telegram](t.me/mrismanaziz)"
-        "\n[Repo](https://github.com/W29F/Lonelywolf-ubot)"
+        "\n[Telegram](t.me/privatener)"
+        "\n[Repo](https://github.com/W29F/TG-Lonely-WolfUbot)"
        
     )
 
@@ -21,7 +21,7 @@ async def usit(e):
 async def var(m):
     await m.edit(
         f"**Disini Daftar Vars Dari {DEFAULTUSER}:**\n"
-        "\n[DAFTAR VARS](https://raw.githubusercontent.com/W29F/Lonelywolf-ubot/master/varshelper.txt)"
+        "\n[DAFTAR VARS](https://raw.githubusercontent.com/W29F/TG-Lonely-WolfUbot/main/varshelper.txt)"
     )
 
 
