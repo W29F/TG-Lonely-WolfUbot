@@ -54,7 +54,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
                 f"{txt}\n`Kredensial Heroku tidak valid untuk deploy Man-Userbot dyno.`"
             )
             return repo.__del__()
-        await event.edit("`[HEROKU]: Update Deploy Man-Userbot Sedang Dalam Proses...`")
+        await event.edit("`[HEROKU]: Update Deploy TG-Lonely-WolfUbot Sedang Dalam Proses...`")
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
         heroku_git_url = heroku_app.git_url.replace(
@@ -79,14 +79,14 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
             return await event.delete()
         else:
             await event.edit(
-                "`Man-Userbot Berhasil Di Deploy! Userbot bisa di gunakan kembali.`"
+                "`TG-Lonely-WolfUbot Berhasil Di Deploy! Userbot bisa di gunakan kembali.`"
             )
             await asyncio.sleep(15)
             await event.delete()
 
         if BOTLOG:
             await event.client.send_message(
-                BOTLOG_CHATID, "#BOT \n" "`Man-Userbot Berhasil Di Update`"
+                BOTLOG_CHATID, "#BOT \n" "`TG-Lonely-WolfUbot Berhasil Di Update`"
             )
 
     else:
@@ -101,9 +101,9 @@ async def update(event, repo, ups_rem, ac_br):
         ups_rem.pull(ac_br)
     except GitCommandError:
         repo.git.reset("--hard", "FETCH_HEAD")
-    await event.edit("**✥ Lonelywolf-ubot** `Berhasil Di Update!`")
+    await event.edit("**✥ TG-Lonely-WolfUbot** `Berhasil Di Update!`")
     await asyncio.sleep(1)
-    await event.edit("**✥ Lonelywolf-ubot** `Sedang di Restart....`")
+    await event.edit("**✥ TG-Lonely-WolfUbot** `Sedang di Restart....`")
     await asyncio.sleep(1)
     await event.edit("`Tunggu Beberapa Detik `")
     await asyncio.sleep(10)
@@ -111,7 +111,7 @@ async def update(event, repo, ups_rem, ac_br):
 
     if BOTLOG:
         await event.client.send_message(
-            BOTLOG_CHATID, "#BOT \n" "**Man-Userbot Sedang Di Perbarui**"
+            BOTLOG_CHATID, "#BOT \n" "**TG-Lonely-WolfUbot Sedang Di Perbarui**"
         )
         await asyncio.sleep(100)
         await event.delete()
@@ -173,13 +173,13 @@ async def upstream(event):
     changelog = await gen_chlog(repo, f"HEAD..upstream/{ac_br}")
 
     if changelog == "" and force_update is False:
-        await event.edit(f"\n**✥ Lonelywolf-ubot Sudah Versi Terbaru**\n")
+        await event.edit(f"\n**✥ TG-Lonely-WolfUbot Sudah Versi Terbaru**\n")
         await asyncio.sleep(15)
         await event.delete()
         return repo.__del__()
 
     if conf is None and force_update is False:
-        changelog_str = f"**✥ Pembaruan Untuk Lonelywolf-ubot [{ac_br}] :\n\n✥ Pembaruan:**\n`{changelog}`"
+        changelog_str = f"**✥ Pembaruan Untuk TG-Lonely-WolfUbot [{ac_br}] :\n\n✥ Pembaruan:**\n`{changelog}`"
         if len(changelog_str) > 4096:
             await event.edit("`Changelog Terlalu Besar, Buka File Untuk Melihatnya.`")
             file = open("output.txt", "w+")
@@ -194,7 +194,7 @@ async def upstream(event):
         else:
             await event.edit(changelog_str)
         return await event.respond(
-            "✥ **Perintah Untuk Update Lonelywolf-ubot**\n ›`.update now`\n ›`.update deploy`\n\n__Untuk Meng Update Fitur Terbaru Dari Man-Userbot.__"
+            "✥ **Perintah Untuk Update TG-Lonely-WolfUbot**\n ›`.update now`\n ›`.update deploy`\n\n__Untuk Meng Update Fitur Terbaru Dari TG-Lonely-WolfUbot.__"
         )
 
     if force_update:
@@ -202,13 +202,13 @@ async def upstream(event):
             "`Sinkronisasi Paksa Ke Kode Userbot Stabil Terbaru, Harap Tunggu .....`"
         )
     else:
-        await event.edit("`✣ Proses Update Lonelywolf-ubot, Loading....1%`")
-        await event.edit("`✣ Proses Update Lonelywolf-ubot, Loading....12%`")
-        await event.edit("`✣ Proses Update Lonelywolf-ubot, Loading....25%`")
-        await event.edit("`✣ Proses Update Lonelywolf-ubot, Loading....46%`")
-        await event.edit("`✣ Proses Update Lonelywolf-ubot, Loading....76%`")
-        await event.edit("`✣ Proses Update Lonelywolf-ubot, Updating...92%`")
-        await event.edit("`✣ Proses Update Lonelywolf-ubot, Tunggu Sebentar....100%`")
+        await event.edit("`✣ Proses Update TG-Lonely-WolfUbot, Loading....1%`")
+        await event.edit("`✣ Proses Update TG-Lonely-WolfUbot, Loading....12%`")
+        await event.edit("`✣ Proses Update TG-Lonely-WolfUbot, Loading....25%`")
+        await event.edit("`✣ Proses Update TG-Lonely-WolfUbot, Loading....46%`")
+        await event.edit("`✣ Proses Update TG-Lonely-WolfUbot, Loading....76%`")
+        await event.edit("`✣ Proses Update TG-Lonely-WolfUbot, Updating...92%`")
+        await event.edit("`✣ Proses Update TG-Lonely-WolfUbot, Tunggu Sebentar....100%`")
     if conf == "now":
         await update(event, repo, ups_rem, ac_br, txt)
         await asyncio.sleep(10)
