@@ -30,7 +30,7 @@ async def help(event):
             string += "`" + str(i)
             string += "`\t❉ "
         await event.edit(
-            "☙ **✦ Daftar Perintah Untuk Lonelywolf-ubot :\n\n** ❧"
+            "☙ **✦ Daftar Perintah Untuk TG-Lonely-WolfUbot :\n\n** ❧"
             f"❉{string}❉"
             "☙ \n\n**Support** @privatener ❧"
         )
