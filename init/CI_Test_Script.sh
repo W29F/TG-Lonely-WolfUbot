@@ -22,4 +22,4 @@ git fetch
 git checkout staging
 git pull origin staging
 git push --force origin staging:Man-Userbot
-tg_sendinfo "<code>I have merged all commits from staging into Lonelywolf-ubot</code>"
+tg_sendinfo "<code>I have merged all commits from staging into TG-Lonely-WolfUbot</code>"
