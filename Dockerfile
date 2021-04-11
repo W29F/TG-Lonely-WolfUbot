@@ -1,7 +1,7 @@
 # We're using Ubuntu 20.10
 FROM privatener29/lonelywolf-dock:lonelywolf
 
-RUN git clone -b TG-Lonely-WolfUbot https://github.com/W29F/TG-Lonely-WolfUbot /root/userbot
+RUN git clone  https://github.com/W29F/TG-Lonely-WolfUbot /root/userbot
 RUN mkdir /root/userbot/.bin
 RUN pip install --upgrade pip setuptools
 WORKDIR /root/userbot
