@@ -101,9 +101,9 @@ GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
 # Custom (forked) repo URL for updater.
 UPSTREAM_REPO_URL = os.environ.get(
     "UPSTREAM_REPO_URL",
-    "https://github.com/W29F/Lonelywolf-ubot.git")
+    "https://github.com/W29F/TG-Lonely-WolfUbot.git")
 UPSTREAM_REPO_BRANCH = os.environ.get(
-    "UPSTREAM_REPO_BRANCH", "Lonelywolf-ubot")
+    "UPSTREAM_REPO_BRANCH", "TG-Lonely-WolfUbot")
 
 # Console verbose logging
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
@@ -397,9 +397,9 @@ with bot:
         @tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
             if event.message.from_id != uid:
-                await event.reply(f"**Hey**, __I am using__ ☙ **Lonelywolf-ubot** ❧\n\n"f"      __Thanks For Using me__\n\n"f"☙ **Userbot Version :** `{BOT_VER}@{UPSTREAM_REPO_BRANCH}`\n"f"☙ **Group Support :** [Sharing Userbot](t.me/privatener)\n"f"✣ **Owner Repo :** [W29F](t.me/privatener)\n"f"☙ **Repo :** [Lonelywolf-ubot](https://github.com/W29F/Lonelywolf-ubot)\n")
+                await event.reply(f"**Hey**, __I am using__ ☙ **TG-Lonely-WolfUbot** ❧\n\n"f"      __Thanks For Using me__\n\n"f"☙ **Userbot Version :** `{BOT_VER}@{UPSTREAM_REPO_BRANCH}`\n"f"☙ **Group Support :** [Sharing Userbot](t.me/privatener)\n"f"✣ **Owner Repo :** [W29F](t.me/privatener)\n"f"☙ **Repo :** [TG-Lonely-WolfUbot](https://github.com/W29F/TG-Lonely-WolfUbot)\n")
             else:
-                await event.reply(f"**Hey**, __I am using__ ☙ **Lonelywolf-ubot** ❧\n\n"f"      __Thanks For Using me__\n\n"f"☙ **Userbot Version :** `{BOT_VER}@{UPSTREAM_REPO_BRANCH}`\n"f"☙ **Group Support :** [Sharing Userbot](t.me/privatener)\n"f"✣ **Owner Repo :** [W29F](t.me/privatener)\n"f"☙ **Repo :** [Lonelywolf-ubot](https://github.com/W29F/Lonelywolf-ubot)\n")
+                await event.reply(f"**Hey**, __I am using__ ☙ **TG-Lonely-WolfUbot** ❧\n\n"f"      __Thanks For Using me__\n\n"f"☙ **Userbot Version :** `{BOT_VER}@{UPSTREAM_REPO_BRANCH}`\n"f"☙ **Group Support :** [Sharing Userbot](t.me/privatener)\n"f"✣ **Owner Repo :** [W29F](t.me/privatener)\n"f"☙ **Repo :** [TG-Lonely-WolfUbot](https://github.com/W29F/TG-Lonely-WolfUbot)\n")
 
         @tgbot.on(events.InlineQuery)  # pylint:disable=E0602
         async def inline_handler(event):
@@ -410,8 +410,8 @@ with bot:
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.article(
                     "Harap Gunakan .help Untuk Perintah",
-                    text="{}\n\n**☙ Jumlah Module Yang Tersedia :** `{}` **Module**\n               \n**☙ Daftar Modul Lonelywolf-ubot :** \n".format(
-                        "**☙✗ Lonelywolf-ubot Main Menu ✗❧**",
+                    text="{}\n\n**☙ Jumlah Module Yang Tersedia :** `{}` **Module**\n               \n**☙ Daftar Modul TG-Lonely-WolfUbot :** \n".format(
+                        "**☙✗ TG-Lonely-WolfUbot Main Menu ✗❧**",
                         len(dugmeler),
                     ),
                     buttons=buttons,
@@ -420,9 +420,9 @@ with bot:
             elif query.startswith("repo"):
                 result = builder.article(
                     title="Repository",
-                    description="Repository Lonelywolf-ubot",
+                    description="Repository TG-Lonely-WolfUbot",
                     url="https://t.me/privatener",
-                    text="**Lonelywolf-ubot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **Owner Repo :** [W29F](https://t.me/privatener)\n✣ **Grup Support :** @privatener\n✣ **Repository :** [Lonelywolf-ubot](https://github.com/W29F/Lonelywolf-ubot)\n➖➖➖➖➖➖➖➖➖➖",
+                    text="**TG-Lonely-WolfUbot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **Owner Repo :** [W29F](https://t.me/privatener)\n✣ **Grup Support :** @privatener\n✣ **Repository :** [TG-Lonely-WolfUbot](https://github.com/W29F/TG-Lonely-WolfUbot)\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
                             custom.Button.url(
@@ -430,15 +430,15 @@ with bot:
                                 "https://t.me/privatener"),
                             custom.Button.url(
                                 "Repo",
-                                "https://github.com/W29F/Lonelywolf-ubot")],
+                                "https://github.com/W29F/TG-Lonely-WolfUbot")],
                     ],
                     link_preview=False)
             else:
                 result = builder.article(
-                    title="✗ Lonelywolf-ubot ✗",
-                    description="Lonelywolf-ubot | Telethon",
+                    title="✗ TG-Lonely-WolfUbot ✗",
+                    description="TG-Lonely-WolfUbot | Telethon",
                     url="https://t.me/privatener",
-                    text="**Lonelywolf-ubot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **Owner Repo :** [W29F](https://t.me/privatener)\n✣ **Grup Support :** @privatener\n✣ **Repository :** [Lonelywolf-ubot](https://github.com/W29F/Lonelywolf-ubot)\n➖➖➖➖➖➖➖➖➖➖",
+                    text="**TG-Lonely-WolfUbot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **Owner Repo :** [W29F](https://t.me/privatener)\n✣ **Grup Support :** @privatener\n✣ **Repository :** [TG-Lonely-WolfUbot](https://github.com/W29F/TG-Lonely-WolfUbot)\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
                             custom.Button.url(
@@ -446,7 +446,7 @@ with bot:
                                 "https://t.me/privatener"),
                             custom.Button.url(
                                 "Repo",
-                                "https://github.com/W29F/Lonelywolf-ubot")],
+                                "https://github.com/W29F/TG-Lonely-WolfUbot")],
                     ],
                     link_preview=False,
                 )
