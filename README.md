@@ -1,7 +1,7 @@
 <p align="center">
     <a href="https://app.codacy.com/gh/mrismanaziz/Man-Userbot/dashboard"> <img src="https://img.shields.io/codacy/grade/a8f0747a964e4712818a28d2a7f4edd3?color=blue&logo=codacy&style=for-the-badge" alt="Codacy" /></a>
-    <a href="https://github.com/W29F/Lonelywolf-ubot"> <img src="https://img.shields.io/github/repo-size/W29F/Lonelywolf-ubot?style=for-the-badge" /></a>
-    <a href="https://github.com/W29F/Lonelywolf-ubot/network/members"> <img src="https://img.shields.io/github/forks/W29F/Lonelywolf-ubot?style=for-the-badge" /></a>
+    <a href="https://github.com/W29F/TG-Lonely-WolfUbot"> <img src="https://img.shields.io/github/repo-size/W29F/Lonelywolf-ubot?style=for-the-badge" /></a>
+    <a href="https://github.com/W29F/TG-Lonely-WolfUbott/network/members"> <img src="https://img.shields.io/github/repo-size/W29F/TG-Lonely-WolfUbot?style=for-the-badge/></a>
     <a href="https://pypi.org/project/Telethon/"> <img src="https://img.shields.io/pypi/v/telethon?label=telethon&logo=pypi&logoColor=white&style=for-the-badge" /></a>
     <img alt="PYTHON" src="https://img.shields.io/badge/PYTHON-v3.9.0-blue?style=for-the-badge&logo=appveyor"/>
    </p>
