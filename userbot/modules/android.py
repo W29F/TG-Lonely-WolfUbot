@@ -114,7 +114,7 @@ async def codename_info(request):
 
 @register(outgoing=True, pattern=r"^\.pixeldl(?: |$)(.*)")
 async def download_api(dl):
-    await dl.edit("☙ `Collecting information...` ❧")
+    await dl.edit("➳ `Collecting information...` ")
     URL = dl.pattern_match.group(1)
     URL_MSG = await dl.get_reply_message()
     if URL:
@@ -122,17 +122,17 @@ async def download_api(dl):
     elif URL_MSG:
         URL = URL_MSG.text
     else:
-        await dl.edit("☙ `Empty information...` ❧")
+        await dl.edit("➳ `Empty information...` ")
         return
     if not re.findall(r"\bhttps?://download.*pixelexperience.*\.org\S+", URL):
-        await dl.edit("☙ `Invalid information...`❧")
+        await dl.edit("➳ `Invalid information...`")
         return
     driver = await chrome()
-    await dl.edit("☙`Getting information...`❧")
+    await dl.edit("➳`Getting information...`")
     driver.get(URL)
     error = driver.find_elements_by_class_name("swal2-content")
     if len(error) > 0 and error[0].text == "File Not Found.":
-        await dl.edit(f"☙`FileNotFoundError`: {URL} is not found.❧")
+        await dl.edit(f"➳`FileNotFoundError`: {URL} is not found.")
         return
     datas = driver.find_elements_by_class_name("download__meta")
     md5_origin = None
@@ -146,12 +146,12 @@ async def download_api(dl):
         if md5_origin is not None and i is not None:
             break
     if md5_origin is None and i is None:
-        await dl.edit("☙`There is no match version available...`❧")
+        await dl.edit("☙`There is no match version available...`")
     file_name = URL.split("/")[-2] if URL.endswith("/") else URL.split("/")[-1]
     file_path = TEMP_DOWNLOAD_DIRECTORY + file_name
     download = driver.find_elements_by_class_name("download__btn")[i]
     download.click()
-    await dl.edit("☙`Starting download...`❧")
+    await dl.edit("➳`Starting download...`")
     file_size = human_to_bytes(download.text.split(None, 3)[-1].strip("()"))
     display_message = None
     complete = False
@@ -202,11 +202,11 @@ async def download_api(dl):
             if md5_origin == MD5:
                 complete = True
             else:
-                await dl.edit("☙`Download corrupt...`❧")
+                await dl.edit("➳`Download corrupt...`")
                 os.remove(file_path)
                 driver.quit()
                 return
-    await dl.respond(f"☙`{file_name}`\n\n" f"Successfully downloaded to `{file_path}`.❧")
+    await dl.respond(f"➳`{file_name}`\n\n" f"Successfully downloaded to `{file_path}`.")
     await dl.delete()
     driver.quit()
     return
@@ -223,7 +223,7 @@ async def devices_specifications(request):
         brand = textx.text.split(" ")[0]
         device = " ".join(textx.text.split(" ")[1:])
     else:
-        await request.edit("☙`Usage: .specs <brand> <device>`❧")
+        await request.edit("➳`Usage: .specs <brand> <device>`")
         return
     all_brands = (
         BeautifulSoup(
