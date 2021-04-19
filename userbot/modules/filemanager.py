@@ -25,14 +25,14 @@ async def lst(event):
     path = cat if cat else os.getcwd()
     if not exists(path):
         await event.edit(
-            f" ☙ **There is no such directory or file with the name `{cat}` check again!** ❧"
+            f"➳**There is no such directory or file with the name `{cat}` check again!** "
         )
         return
     if isdir(path):
         if cat:
-            msg = "☙ **Folders and Files in `{}`** :\n\n ❧".format(path)
+            msg = "➳ **Folders and Files in `{}`** :\n\n  ".format(path)
         else:
-            msg = "☙ **Folders and Files in Current Directory** :\n\n ❧"
+            msg = "➳ **Folders and Files in Current Directory** :\n\n "
         lists = os.listdir(path)
         files = ""
         folders = ""
