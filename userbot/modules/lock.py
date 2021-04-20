@@ -158,11 +158,11 @@ async def rem_locks(event):
         what = "Semuanya"
     else:
         if not input_str:
-            await event.edit("☙`Apa Yang Harus Saya Buka?`❧")
+            await event.edit("➳`Apa Yang Harus Saya Buka?` ")
             return
         else:
             await event.edit(
-                f"☙`Jenis Kunci Yang Mau Anda Buka Tidak Valid` `{input_str}`❧"
+                f"➳`Jenis Kunci Yang Mau Anda Buka Tidak Valid` `{input_str}` "
             )
             return
 
@@ -185,10 +185,10 @@ async def rem_locks(event):
                 peer=peer_id, banned_rights=unlock_rights
             )
         )
-        await event.edit(f"☙`Master Telah Membuka Kunci {what} Untuk Obrolan Ini!!`❧")
+        await event.edit(f"➳`Master Telah Membuka Kunci {what} Untuk Obrolan Ini!!` ")
     except BaseException as e:
         await event.edit(
-            f"☙`Apakah Master Mempunyai Izin Melakukan Itu Disini?`\n**Kesalahan:** {str(e)}❧"
+            f"➳`Apakah Master Mempunyai Izin Melakukan Itu Disini?`\n**Kesalahan:** {str(e)} "
         )
         return
 
