@@ -11,10 +11,10 @@ from userbot.events import register
 async def gcast(event):
     xx = event.pattern_match.group(1)
     if not xx:
-        return await event.edit("☙`Berikan Sebuah Pesan`❧")
+        return await event.edit("➳`Berikan Sebuah Pesan` ")
     tt = event.text
     msg = tt[6:]
-    kk = await event.edit("☙`Globally Broadcasting Msg...`❧")
+    kk = await event.edit("➳`Globally Broadcasting Msg...` ")
     er = 0
     done = 0
     async for x in bot.iter_dialogs():
