@@ -62,9 +62,9 @@ async def gspide(rk):
     sender = await lazy.get_sender()
     me = await lazy.client.get_me()
     if not sender.id == me.id:
-        rkp = await lazy.reply("`☙ Processing... ❧`")
+        rkp = await lazy.reply("`➳ Processing...  `")
     else:
-        rkp = await lazy.edit("`☙ Processing... ❧`")
+        rkp = await lazy.edit("`➳ Processing...  `")
     me = await rk.client.get_me()
     await rkp.edit(f"`☙ {ALIVE_NAME} Memproses Global Kick Jamet Goblok! ❧`")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
@@ -84,10 +84,10 @@ async def gspide(rk):
         if not reason:
             reason = "Private"
     except BaseException:
-        return await rkp.edit(f"`☙ Gagal Global Kick! Pengguna tidak dikenal. ❧`")
+        return await rkp.edit(f"`➳ Gagal Global Kick! Pengguna tidak dikenal.  `")
     if user:
         if user.id == 844432220:
-            return await rkp.edit(f"`☙ {ALIVE_NAME} Jangan Ngadi Ngadi itu CODER aing ❧`")
+            return await rkp.edit(f"`➳ {ALIVE_NAME} Jangan Ngadi Ngadi itu CODER aing  `")
         try:
             await rk.client(BlockRequest(user))
             await rk.client(UnblockRequest(user))
@@ -104,16 +104,16 @@ async def gspide(rk):
                 await rk.client.edit_permissions(i, user, send_messages=True)
                 a += 1
                 await rkp.edit(
-                    f"`☙ {ALIVE_NAME} Memproses Global Kick Jamet Goblok! Gkicked di {a} Group Chats.. ❧`"
+                    f"`➳ {ALIVE_NAME} Memproses Global Kick Jamet Goblok! Gkicked di {a} Group Chats..  `"
                 )
 
             except BaseException:
                 b += 1
     else:
-        await rkp.edit(f"`☙ {ALIVE_NAME} Reply ke Chat Penggunanya Goblok!! ❧`")
+        await rkp.edit(f"`➳ {ALIVE_NAME} Reply ke Chat Penggunanya Goblok!!  `")
 
     return await rkp.edit(
-        f"`☙ Berhasil GKicked` [{user.first_name}](tg://user?id={user.id}) `di {a} Group Chats.. ❧`"
+        f"`➳ Berhasil GKicked` [{user.first_name}](tg://user?id={user.id}) `di {a} Group Chats..  `"
     )
 
 
