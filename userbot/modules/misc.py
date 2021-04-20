@@ -47,12 +47,12 @@ async def randomise(items):
     itemo = (items.text[8:]).split()
     if len(itemo) < 2:
         await items.edit(
-            "☙`2 or more items are required! Check .help random for more info.`❧"
+            "➳`2 or more items are required! Check .help random for more info.` "
         )
         return
     index = randint(1, len(itemo) - 1)
     await items.edit(
-        "☙**Query: **\n`" + items.text[8:] + "`\n**Output: **\n`" + itemo[index] + "`❧"
+        "➳**Query: **\n`" + items.text[8:] + "`\n**Output: **\n`" + itemo[index] + "` "
     )
 
 
@@ -60,7 +60,7 @@ async def randomise(items):
 async def sleepybot(time):
     """ For .sleep command, let the userbot snooze for a few second. """
     counter = int(time.pattern_match.group(1))
-    await time.edit("☙`I am sulking and snoozing...`❧")
+    await time.edit("➳`I am sulking and snoozing...` ")
     if BOTLOG:
         str_counter = time_formatter(counter)
         await time.client.send_message(
@@ -68,13 +68,13 @@ async def sleepybot(time):
             f"You put the bot to sleep for {str_counter}.",
         )
     sleep(counter)
-    await time.edit("☙`OK, I'm awake now.`❧")
+    await time.edit("➳`OK, I'm awake now.` ")
 
 
 @register(outgoing=True, pattern=r"^\.shutdown$")
 async def killdabot(event):
     """ For .shutdown command, shut the bot down."""
-    await event.edit("☙`Mematikan Lonelywolf-ubot....`❧")
+    await event.edit("➳`Mematikan Lonelywolf-ubot....` ")
     await asyncio.sleep(7)
     await event.delete()
     if BOTLOG:
@@ -86,7 +86,7 @@ async def killdabot(event):
 
 @register(outgoing=True, pattern=r"^\.restart$")
 async def killdabot(event):
-    await event.edit("☙`Restarting TG-Lonely-WolfUbot...`❧")
+    await event.edit("➳`Restarting TG-Lonely-WolfUbot...` ")
     if BOTLOG:
         await event.client.send_message(
             BOTLOG_CHATID, "#RESTARTBOT \n" "`TG-Lonely-WolfUbot Telah Di Restart`"
@@ -334,11 +334,11 @@ CMD_HELP.update(
 
 CMD_HELP.update(
     {
-        "repo": "**Plugin : **`Repository Man-Userbot`\
+        "repo": "**Plugin : **`Repository TG-Lonely-WolfUbot`\
         \n\n  •  **Syntax :** `.repo`\
-        \n  •  **Function : **Menampilan link Repository Man-Userbot\
+        \n  •  **Function : **Menampilan link Repository TG-Lonely-WolfUbot\
         \n\n  •  **Syntax :** `.string`\
-        \n  •  **Function : **Menampilan link String Man-Userbot\
+        \n  •  **Function : **Menampilan link String TG-Lonely-WolfUbot\
     "
     }
 )
