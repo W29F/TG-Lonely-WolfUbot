@@ -313,7 +313,7 @@ async def amireallyalive(alive):
         f"┣ ❧ `Telethon : `Ver {version.__version__} \n"
         f"┣ ❧ `Python   : `Ver {python_version()} \n"
         f"┣ ❧ `Bot Ver  : `{BOT_VER} \n"
-        f"┣ ❧ `Branch   : `Man-Userbot \n"
+        f"┣ ❧ `Branch   : `TG-Lonely-WolfUbot \n"
         f"┣ ❧ `Modules  : `{len(modules)} Modules \n"
         f"┣ ❧ `Uptime   : `{uptime} \n"
         f"┗━━━━━━━━━━━━━━ \n"
