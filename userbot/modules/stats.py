@@ -122,12 +122,12 @@ async def _(event):
     if event.fwd_from:
         return
     if not event.reply_to_msg_id:
-        return await event.edit("```☙ Balas di Pesan Usernya Goblok!!. ❧```")
+        return await event.edit("```➳ Balas di Pesan Usernya Goblok!!. ```")
     reply_message = await event.get_reply_message()
     if not reply_message.text:
-        return await event.edit("```☙ Balas di Pesan Usernya Goblok!! ❧```")
+        return await event.edit("```➳ Balas di Pesan Usernya Goblok!! ```")
     chat = "@tgscanrobot"
-    await event.edit("☙ Checking Group User.... ❧")
+    await event.edit("➳ Checking Group User.... ")
     async with event.client.conversation(chat) as conv:
         try:
             response = conv.wait_event(
@@ -136,10 +136,10 @@ async def _(event):
             msg = await event.client.forward_messages(chat, reply_message)
             response = await response
         except YouBlockedUserError:
-            await event.reply("☙ unblock bot @tgscanrobot to work ❧")
+            await event.reply("➳ unblock bot @tgscanrobot to work ")
             return
-        if response.text.startswith("☙ I understand only text ❧"):
-            await event.edit("☙ Sorry i cant't check group this user **BURIK!!** ❧")
+        if response.text.startswith("➳ I understand only text "):
+            await event.edit("➳ Sorry i cant't check group this user **BURIK!!** ")
         else:
             if response.text.startswith("Information"):
                 response = conv.wait_event(
