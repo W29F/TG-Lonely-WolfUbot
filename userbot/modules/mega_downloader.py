@@ -41,7 +41,7 @@ async def subprocess_run(megadl, cmd):
 
 @register(outgoing=True, pattern=r"^\.mega(?: |$)(.*)")
 async def mega_downloader(megadl):
-    await megadl.edit("☙`Collecting information...`❧")
+    await megadl.edit("➳`Collecting information...` ")
     if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
         os.makedirs(TEMP_DOWNLOAD_DIRECTORY)
     msg_link = await megadl.get_reply_message()
@@ -58,17 +58,17 @@ async def mega_downloader(megadl):
         if "file" in link:
             link = link.replace("#", "!").replace("file/", "#!")
         elif "folder" in link or "#F" in link or "#N" in link:
-            await megadl.edit("☙`folder download support are removed...`❧")
+            await megadl.edit("➳`folder download support are removed...` ")
             return
     except IndexError:
-        await megadl.edit("☙`MEGA.nz link not found...`❧")
+        await megadl.edit("➳`MEGA.nz link not found...` ")
         return None
     cmd = f"bin/megadown -q -m {link}"
     result = await subprocess_run(megadl, cmd)
     try:
         data = json.loads(result[0])
     except json.JSONDecodeError:
-        await megadl.edit("☙**JSONDecodeError**: `failed to extract link...`❧")
+        await megadl.edit("➳**JSONDecodeError**: `failed to extract link...` ")
         return None
     except (IndexError, TypeError):
         return
@@ -151,7 +151,7 @@ async def mega_downloader(megadl):
             return None
     else:
         await megadl.edit(
-            "☙`Failed to download, " "check heroku Logs for more details.`❧"
+            "➳`Failed to download, " "check heroku Logs for more details.` "
         )
         for e in downloader.get_errors():
             LOGS.info(str(e))
