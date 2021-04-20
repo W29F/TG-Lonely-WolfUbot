@@ -102,7 +102,7 @@ async def permitpm(event):
                     if BOTLOG:
                         await event.client.send_message(
                             BOTLOG_CHATID,
-                            " ☙ Terjadi Masalah Saat Menghitung Private Message, Mohon Restart Bot! ❧",
+                            " ➳ Terjadi Masalah Saat Menghitung Private Message, Mohon Restart Bot! ",
                         )
                     return LOGS.info("CountPM wen't rarted boi")
 
@@ -238,7 +238,7 @@ async def approvepm(apprvpm):
         return await apprvpm.edit("`Oke Pesan Anda Sudah Diterima`")
 
     await apprvpm.edit(
-        f"☙ `Hai` [{name0}](tg://user?id={uid}) `Pesan Anda Sudah Diterima` ❧"
+        f"➳ `Hai` [{name0}](tg://user?id={uid}) `Pesan Anda Sudah Diterima` "
     )
     await apprvpm.delete(getmsg)
     await message.delete()
@@ -268,7 +268,7 @@ async def disapprovepm(disapprvpm):
         name0 = str(aname.first_name)
 
     await disapprvpm.edit(
-        f"☙ `Maaf` [{name0}](tg://user?id={disapprvpm.chat_id}) `Pesan Anda Telah Ditolak, Mohon Jangan Melakukan Spam Ke Room Chat!` ❧"
+        f"➳ `Maaf` [{name0}](tg://user?id={disapprvpm.chat_id}) `Pesan Anda Telah Ditolak, Mohon Jangan Melakukan Spam Ke Room Chat!` "
     )
 
     if BOTLOG:
@@ -318,7 +318,7 @@ async def unblockpm(unblock):
         replied_user = await unblock.client.get_entity(reply.from_id)
         name0 = str(replied_user.first_name)
         await unblock.client(UnblockRequest(replied_user.id))
-        await unblock.edit("☙ `Anda Sudah Tidak Diblokir Lagi.`❧")
+        await unblock.edit("➳ `Anda Sudah Tidak Diblokir Lagi.` ")
 
     if BOTLOG:
         await unblock.client.send_message(
@@ -340,7 +340,7 @@ async def add_pmsg(cust_msg):
         await cust_msg.edit("`Running on Non-SQL mode!`")
         return
 
-    await cust_msg.edit("☙ `Sedang Memproses...` ❧")
+    await cust_msg.edit("➳ `Sedang Memproses...` ")
     conf = cust_msg.pattern_match.group(1)
 
     custom_message = sql.gvarstatus("unapproved_msg")
@@ -363,7 +363,7 @@ async def add_pmsg(cust_msg):
         else:
             return await cust_msg.edit("☙ `Mohon Balas Ke Pesan` ❧")
 
-        await cust_msg.edit("☙ `Pesan Berhasil Disimpan Ke Room Chat` ❧")
+        await cust_msg.edit("➳ `Pesan Berhasil Disimpan Ke Room Chat` ")
 
         if BOTLOG:
             await cust_msg.client.send_message(
@@ -374,9 +374,9 @@ async def add_pmsg(cust_msg):
     if conf.lower() == "reset":
         if custom_message is not None:
             sql.delgvar("unapproved_msg")
-            await cust_msg.edit("☙ `Anda Telah Menghapus Pesan Custom PM Ke Default` ❧")
+            await cust_msg.edit("➳ `Anda Telah Menghapus Pesan Custom PM Ke Default` ")
         else:
-            await cust_msg.edit("☙ `Pesan PM Anda Sudah Default Sejak Awal` ❧")
+            await cust_msg.edit("➳ `Pesan PM Anda Sudah Default Sejak Awal` ")
 
     if conf.lower() == "get":
         if custom_message is not None:
