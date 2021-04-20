@@ -125,7 +125,7 @@ async def trump(event):
         else:
             await event.edit("☙`Send you text to trump so he can tweet.`❧")
             return
-    await event.edit("☙`Requesting trump to tweet...`❧")
+    await event.edit("➳`Requesting trump to tweet...` ")
     text = deEmojify(text)
     img = await trumptweet(text)
     await event.client.send_file(event.chat_id, img, reply_to=reply_to_id)
@@ -144,9 +144,9 @@ async def qg(event):
         if event.is_reply and not reply_to_id.media:
             text = reply_to_id.message
         else:
-            await event.edit("☙`Send you text to @QoryGore so he can tweet.`❧")
+            await event.edit("➳`Send you text to @QoryGore so he can tweet.` ")
             return
-    await event.edit("☙`Requesting QoryGore to tweet...`❧")
+    await event.edit("➳`Requesting QoryGore to tweet...` ")
     text = deEmojify(text)
     img = await qorygore(text)
     await event.client.send_file(event.chat_id, img, reply_to=reply_to_id)
@@ -165,9 +165,9 @@ async def cmm(event):
         if event.is_reply and not reply_to_id.media:
             text = reply_to_id.message
         else:
-            await event.edit("☙`Give text for to write on banner!`❧")
+            await event.edit("➳`Give text for to write on banner!` ")
             return
-    await event.edit("☙`Your banner is under creation wait a sec...`❧")
+    await event.edit("➳`Your banner is under creation wait a sec...` ")
     text = deEmojify(text)
     img = await changemymind(text)
     await event.client.send_file(event.chat_id, img, reply_to=reply_to_id)
@@ -186,9 +186,9 @@ async def kanna(event):
         if event.is_reply and not reply_to_id.media:
             text = reply_to_id.message
         else:
-            await event.edit("☙`What should kanna write give text!`❧")
+            await event.edit("➳`What should kanna write give text!` ")
             return
-    await event.edit("☙`Kanna is writing your text...`❧")
+    await event.edit("➳`Kanna is writing your text...` ")
     text = deEmojify(text)
     img = await kannagen(text)
     await event.client.send_file(event.chat_id, img, reply_to=reply_to_id)
@@ -208,16 +208,16 @@ async def tweet(event):
             if not reply_to_id.media:
                 text = reply_to_id.message
             else:
-                await event.edit("☙`What should i tweet? Give your username and tweet!` ❧")
+                await event.edit("➳`What should i tweet? Give your username and tweet!`  ")
                 return
         else:
-            await event.edit("☙ What should i tweet? Give your username and tweet!` ❧")
+            await event.edit("➳ What should i tweet? Give your username and tweet!` ")
             return
     if "." in text:
         username, text = text.split(".")
     else:
-        await event.edit("☙ `What should i tweet? Give your username and tweet!` ❧")
-    await event.edit(f"☙ `Requesting {username} to tweet...` ❧")
+        await event.edit("➳ `What should i tweet? Give your username and tweet!` ")
+    await event.edit(f"➳ `Requesting {username} to tweet...` ")
     text = deEmojify(text)
     img = await tweets(text, username)
     await event.client.send_file(event.chat_id, img, reply_to=reply_to_id)
