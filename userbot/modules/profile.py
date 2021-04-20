@@ -194,7 +194,7 @@ async def who(event):
     try:
         photo, caption = await fetch_info(replied_user, event)
     except AttributeError:
-        event.edit("☙`Saya Tidak Mendapatkan Informasi Pengguna.`❧")
+        event.edit("➳`Saya Tidak Mendapatkan Informasi Pengguna.` ")
         return
 
     message_id_to_reply = event.message.reply_to_msg_id
@@ -260,7 +260,7 @@ async def fetch_info(replied_user, event):
             user_id=replied_user.user.id, offset=42, max_id=0, limit=80
         )
     )
-    replied_user_profile_photos_count = "☙ This gay has no pic. ❧"
+    replied_user_profile_photos_count = "➳ This gay has no pic. "
     try:
         replied_user_profile_photos_count = replied_user_profile_photos.count
     except AttributeError:
@@ -271,7 +271,7 @@ async def fetch_info(replied_user, event):
     try:
         dc_id, _ = get_input_location(replied_user.profile_photo)
     except Exception as e:
-        dc_id = "☙ Tidak Dapat Mengambil DC ID! ❧"
+        dc_id = "➳ Tidak Dapat Mengambil DC ID! "
         str(e)
     common_chat = replied_user.common_chats_count
     username = replied_user.user.username
@@ -285,19 +285,19 @@ async def fetch_info(replied_user, event):
     first_name = (
         first_name.replace("\u2060", "")
         if first_name
-        else ("☙ Orang Ini Tidak Punya Nama Depan ❧")
+        else ("➳ Orang Ini Tidak Punya Nama Depan ")
     )
     last_name = (
         last_name.replace("\u2060", "")
         if last_name
-        else ("☙ Orang Ini Tidak Punya Nama Belakang ❧")
+        else ("➳ Orang Ini Tidak Punya Nama Belakang ")
     )
     username = (
         "@{}".format(username)
         if username
-        else ("☙ Pengguna Ini Tidak Menggunakan Username ❧")
+        else ("➳ Pengguna Ini Tidak Menggunakan Username ")
     )
-    user_bio = "☙ Orang Ini Tidak Menggunakan Bio ❧" if not user_bio else user_bio
+    user_bio = "➳ Orang Ini Tidak Menggunakan Bio " if not user_bio else user_bio
 
     caption = "<b>Informasi Pengguna:</b>\n\n"
     caption += f"Nama Depan: {first_name}\n"
