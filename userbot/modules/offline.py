@@ -67,11 +67,11 @@ async def set_afk(afk_e):
     if string:
         AFKREASON = string
         await afk_e.edit(
-            f"☙ **✘ {ALIVE_NAME} Telah OFF ✘**\
-        \n✦҈͜͡➳ **Karena :** `{string}` ❧"
+            f"➳ **✘ {ALIVE_NAME} Telah OFF ✘**\
+        \n✦҈͜͡➳ **Karena :** `{string}` "
         )
     else:
-        await afk_e.edit(f"☙ **✘ {ALIVE_NAME} Telah OFF ✘**❧")
+        await afk_e.edit(f"➳ **✘ {ALIVE_NAME} Telah OFF ✘** ")
     if user.last_name:
         await afk_e.client(
             UpdateProfileRequest(
@@ -204,8 +204,8 @@ async def mention_afk(mention):
                 if USERS[mention.sender_id] % randint(2, 4) == 0:
                     if AFKREASON:
                         await mention.reply(
-                            f"☙ **✘ {ALIVE_NAME} Masih OFF ✘** {afk_since} **Yang Lalu.**\
-                            \n✦҈͜͡➳ **Karena :** `{AFKREASON}` ❧"
+                            f"➳ **✘ {ALIVE_NAME} Masih OFF ✘** {afk_since} **Yang Lalu.**\
+                            \n✦҈͜͡➳ **Karena :** `{AFKREASON}` "
                         )
                     else:
                         await mention.reply(str(choice(AFKSTR)))
@@ -278,8 +278,8 @@ async def afk_on_pm(sender):
             if sender.sender_id not in USERS:
                 if AFKREASON:
                     await sender.reply(
-                        f"☙ ✘ **{ALIVE_NAME} Sedang OFF ✘** {afk_since} **Yang Lalu** ✘.\
-                        \n✦҈͜͡➳ **Karena :** `{AFKREASON}` ❧"
+                        f"➳ ✘ **{ALIVE_NAME} Sedang OFF ✘** {afk_since} **Yang Lalu** ✘.\
+                        \n✦҈͜͡➳ **Karena :** `{AFKREASON}` "
                     )
                 else:
                     await sender.reply(str(choice(AFKSTR)))
@@ -289,8 +289,8 @@ async def afk_on_pm(sender):
                 if USERS[sender.sender_id] % randint(2, 4) == 0:
                     if AFKREASON:
                         await sender.reply(
-                            f"☙ ✘ **{ALIVE_NAME} Sedang OFF ✘** {afk_since} **Yang Lalu. ✘**\
-                            \n✦҈͜͡➳ **Karena :** `{AFKREASON}` ❧"
+                            f"➳ ✘ **{ALIVE_NAME} Sedang OFF ✘** {afk_since} **Yang Lalu. ✘**\
+                            \n✦҈͜͡➳ **Karena :** `{AFKREASON}` "
                         )
                     else:
                         await sender.reply(str(choice(AFKSTR)))
