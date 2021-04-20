@@ -19,7 +19,7 @@ async def get_full_user(event):
         if user.isnumeric():
             user = int(user)
         if not user:
-            await event.edit("☙ `User ID Is Required ❧")
+            await event.edit("➳ `User ID Is Required ")
             return
         if event.message.entities is not None:
             probable_user_mention_entity = event.message.entities[0]
@@ -30,7 +30,7 @@ async def get_full_user(event):
         try:
             user_obj = await event.client.get_entity(user)
         except Exception as err:
-            return await event.edit("☙ Something Went Wrong ❧", str(err))
+            return await event.edit("➳ Something Went Wrong ", str(err))
     return user_obj, extra
 
 
@@ -51,11 +51,11 @@ async def gspider(userbot):
     sender = await lol.get_sender()
     me = await lol.client.get_me()
     if not sender.id == me.id:
-        friday = await lol.reply("☙`Gbanning...`❧")
+        friday = await lol.reply("➳`Gbanning...` ")
     else:
-        friday = await lol.edit("☙`Gbanning......`❧")
+        friday = await lol.edit("➳`Gbanning......` ")
     me = await userbot.client.get_me()
-    await friday.edit(f"☙`Global Banned user...`❧")
+    await friday.edit(f"➳`Global Banned user...` ")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
     f"@{me.username}" if me.username else my_mention
     await userbot.get_chat()
@@ -73,7 +73,7 @@ async def gspider(userbot):
         if not reason:
             reason = "Private"
     except BaseException:
-        return await friday.edit(f"☙**Terjadi Kesalahan!!**❧")
+        return await friday.edit(f"➳**Terjadi Kesalahan!!** ")
     if user:
         if user.id == 844432220:
             return await friday.edit(
@@ -96,14 +96,14 @@ async def gspider(userbot):
             try:
                 await userbot.client.edit_permissions(i, user, view_messages=False)
                 a += 1
-                await friday.edit(f"☙`Gbanned Total Affected Chats : {a}`❧")
+                await friday.edit(f"➳`Gbanned Total Affected Chats : {a}` ")
             except BaseException:
                 b += 1
     else:
-        await friday.edit(f"☙`Reply to a user !!`❧")
+        await friday.edit(f"➳`Reply to a user !!` ")
     try:
         if gmute(user.id) is False:
-            return await friday.edit(f"☙`Error! User telah di gbanned.`❧")
+            return await friday.edit(f"➳`Error! User telah di gbanned. ")
     except BaseException:
         pass
     return await friday.edit(
@@ -145,11 +145,11 @@ async def gspider(userbot):
         if not reason:
             reason = "Private"
     except BaseException:
-        return await friday.edit("☙`Terjadi Kesalahan!!`❧")
+        return await friday.edit("➳`Terjadi Kesalahan!!` ")
     if user:
         if user.id == 844432220:
             return await friday.edit(
-                "☙`You Cant gban him... as a result you can not ungban him... He is My Creator!`❧"
+                "➳`You Cant gban him... as a result you can not ungban him... He is My Creator!` "
             )
         try:
             from userbot.modules.sql_helper.gmute_sql import ungmute
@@ -168,16 +168,16 @@ async def gspider(userbot):
             try:
                 await userbot.client.edit_permissions(i, user, send_messages=True)
                 a += 1
-                await friday.edit(f"☙`UnGbanning... AFFECTED CHATS - {a} `❧")
+                await friday.edit(f"➳`UnGbanning... AFFECTED CHATS - {a} ` ")
             except BaseException:
                 b += 1
     else:
         await friday.edit("☙`Reply to a user !!`❧")
     try:
         if ungmute(user.id) is False:
-            return await friday.edit("☙`Error! User probably already ungbanned.`❧")
+            return await friday.edit("➳`Error! User probably already ungbanned.` ")
     except BaseException:
         pass
     return await friday.edit(
-        f"☙`Ungbanned` [{user.first_name}](tg://user?id={user.id}) `in {a} chats.\nRemoved from gbanwatch.`❧"
+        f"➳`Ungbanned` [{user.first_name}](tg://user?id={user.id}) `in {a} chats.\nRemoved from gbanwatch.` "
     )
