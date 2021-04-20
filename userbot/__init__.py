@@ -326,7 +326,7 @@ with bot:
 
 
 async def check_alive():
-    await bot.send_message(BOTLOG_CHATID, "```☙✘ Lonelywolf-ubot Berhasil Di Aktifkan ✘❧```")
+    await bot.send_message(BOTLOG_CHATID, "``` ✘ Lonelywolf-ubot Berhasil Di Aktifkan ✘ ```")
     return
 
 with bot:
@@ -397,9 +397,9 @@ with bot:
         @tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
             if event.message.from_id != uid:
-                await event.reply(f"**Hey**, __I am using__ ☙ **TG-Lonely-WolfUbot** ❧\n\n"f"      __Thanks For Using me__\n\n"f"☙ **Userbot Version :** `{BOT_VER}@{UPSTREAM_REPO_BRANCH}`\n"f"☙ **Group Support :** [Sharing Userbot](t.me/privatener)\n"f"✣ **Owner Repo :** [W29F](t.me/privatener)\n"f"☙ **Repo :** [TG-Lonely-WolfUbot](https://github.com/W29F/TG-Lonely-WolfUbot)\n")
+                await event.reply(f"**Hey**, __I am using__ ➳ **TG-Lonely-WolfUbot** ❧\n\n"f"      __Thanks For Using me__\n\n"f"  **Userbot Version :** `{BOT_VER}@{UPSTREAM_REPO_BRANCH}`\n"f"➳ **Group Support :** [Sharing Userbot](t.me/privatener)\n"f"✣ **Owner Repo :** [W29F](t.me/privatener)\n"f"➳ **Repo :** [TG-Lonely-WolfUbot](https://github.com/W29F/TG-Lonely-WolfUbot)\n")
             else:
-                await event.reply(f"**Hey**, __I am using__ ☙ **TG-Lonely-WolfUbot** ❧\n\n"f"      __Thanks For Using me__\n\n"f"☙ **Userbot Version :** `{BOT_VER}@{UPSTREAM_REPO_BRANCH}`\n"f"☙ **Group Support :** [Sharing Userbot](t.me/privatener)\n"f"✣ **Owner Repo :** [W29F](t.me/privatener)\n"f"☙ **Repo :** [TG-Lonely-WolfUbot](https://github.com/W29F/TG-Lonely-WolfUbot)\n")
+                await event.reply(f"**Hey**, __I am using__ ➳ **TG-Lonely-WolfUbot** ❧\n\n"f"      __Thanks For Using me__\n\n"f"  **Userbot Version :** `{BOT_VER}@{UPSTREAM_REPO_BRANCH}`\n"f"➳ **Group Support :** [Sharing Userbot](t.me/privatener)\n"f"✣ **Owner Repo :** [W29F](t.me/privatener)\n"f"➳ **Repo :** [TG-Lonely-WolfUbot](https://github.com/W29F/TG-Lonely-WolfUbot)\n")
 
         @tgbot.on(events.InlineQuery)  # pylint:disable=E0602
         async def inline_handler(event):
@@ -410,8 +410,8 @@ with bot:
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.article(
                     "Harap Gunakan .help Untuk Perintah",
-                    text="{}\n\n**☙ Jumlah Module Yang Tersedia :** `{}` **Module**\n               \n**☙ Daftar Modul TG-Lonely-WolfUbot :** \n".format(
-                        "**☙✗ TG-Lonely-WolfUbot Main Menu ✗❧**",
+                    text="{}\n\n**➳ Jumlah Module Yang Tersedia :** `{}` **Module**\n               \n**➳ Daftar Modul TG-Lonely-WolfUbot :** \n".format(
+                        "**➳✗ TG-Lonely-WolfUbot Main Menu ✗ **",
                         len(dugmeler),
                     ),
                     buttons=buttons,
