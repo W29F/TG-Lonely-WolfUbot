@@ -17,7 +17,7 @@ async def notes_active(svd):
     try:
         from userbot.modules.sql_helper.notes_sql import get_notes
     except AttributeError:
-        return await svd.edit("☙ `Running on Non-SQL mode!` ❧")
+        return await svd.edit("➳ `Running on Non-SQL mode!` ")
     message = "`There are no saved notes in this chat`"
     notes = get_notes(svd.chat_id)
     for note in notes:
