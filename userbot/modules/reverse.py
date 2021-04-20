@@ -35,15 +35,15 @@ async def okgoogle(img):
         photo = io.BytesIO()
         await bot.download_media(message, photo)
     else:
-        await img.edit("`☙ Mohon Balas Ke Sticker ❧`")
+        await img.edit("`➳ Mohon Balas Ke Sticker `")
         return
 
     if photo:
-        await img.edit("`☙ Sedang Mencari Gambar Yang Mirip.... ❧`")
+        await img.edit("`➳ Sedang Mencari Gambar Yang Mirip.... `")
         try:
             image = Image.open(photo)
         except OSError:
-            await img.edit("`☙ Pornography Tidak Didukung. ❧`")
+            await img.edit("`➳ Pornography Tidak Didukung. `")
             return
         name = "okgoogle.png"
         image.save(name, "PNG")
@@ -56,7 +56,7 @@ async def okgoogle(img):
 
         if response != 400:
             await img.edit(
-                "`☙ Gambar sudah di upload ke google, Mungkin ❧`"
+                "`➳ Gambar sudah di upload ke google, Mungkin `"
                 "\n`Mengobok-obok sumber gambar...`"
             )
         else:
@@ -70,10 +70,10 @@ async def okgoogle(img):
 
         if guess and imgspage:
             await img.edit(
-                f"☙ [{guess}]({fetchUrl})\n\n`Sedang Mencari Gambar Yang Mirip... ❧`"
+                f"➳ [{guess}]({fetchUrl})\n\n`Sedang Mencari Gambar Yang Mirip... `"
             )
         else:
-            await img.edit("`☙ Maaf, Saya Tidak Bisa Menemukan Apapun ❧`")
+            await img.edit("`➳ Maaf, Saya Tidak Bisa Menemukan Apapun  `")
             return
 
         if img.pattern_match.group(1):
@@ -94,7 +94,7 @@ async def okgoogle(img):
         except TypeError:
             pass
         await img.edit(
-            f" [{guess}]({fetchUrl})\n\n[☙ Gambar Yang Mirip Secara Visual ❧]({imgspage}) ❧"
+            f" [{guess}]({fetchUrl})\n\n[➳ Gambar Yang Mirip Secara Visual ❧]({imgspage}) "
         )
 
 
