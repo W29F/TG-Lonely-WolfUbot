@@ -226,7 +226,7 @@ async def moni(event):
                 )
             else:
                 await event.edit(
-                    "`☙ Sepertinya ini adalah mata uang asing, yang tidak dapat saya konversi sekarang. ❧`"
+                    "`➳ Sepertinya ini adalah mata uang asing, yang tidak dapat saya konversi sekarang. `"
                 )
         except Exception as e:
             await event.edit(str(e))
@@ -333,7 +333,7 @@ async def text_to_speech(query):
         message = textx.text
     else:
         return await query.edit(
-            "`☙ Give a text or reply to a message for Text-to-Speech! ❧`"
+            "`➳ Give a text or reply to a message for Text-to-Speech! `"
         )
 
     try:
@@ -344,9 +344,9 @@ async def text_to_speech(query):
             "Nothing left to speak after pre-precessing, tokenizing and cleaning."
         )
     except ValueError:
-        return await query.edit("☙ Language is not supported. ❧")
+        return await query.edit("➳ Language is not supported. ")
     except RuntimeError:
-        return await query.edit("☙ Error loading the languages dictionary. ❧")
+        return await query.edit("➳ Error loading the languages dictionary. ")
     tts = gTTS(message, lang=TTS_LANG)
     tts.save("k.mp3")
     with open("k.mp3", "rb") as audio:
@@ -360,7 +360,7 @@ async def text_to_speech(query):
         os.remove("k.mp3")
         if BOTLOG:
             await query.client.send_message(
-                BOTLOG_CHATID, "☙ Text to Speech executed successfully ! ❧"
+                BOTLOG_CHATID, "➳ Text to Speech executed successfully ! "
             )
         await query.delete()
 
