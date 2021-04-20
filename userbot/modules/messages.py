@@ -28,14 +28,14 @@ async def fastpurger(purg):
                 await purg.client.delete_messages(chat, msgs)
                 msgs = []
     else:
-        return await purg.edit("☙`Mohon Balas Ke Pesan`❧")
+        return await purg.edit("➳`Mohon Balas Ke Pesan` ")
 
     if msgs:
         await purg.client.delete_messages(chat, msgs)
     done = await purg.client.send_message(
         purg.chat_id,
-        f"☙ `Berhasil Menghapus Kenangan`\
-        \nJumlah Pesan Yang Dihapus {str(count)} Pesan ❧",
+        f"➳ `Berhasil Menghapus Kenangan`\
+        \nJumlah Pesan Yang Dihapus {str(count)} Pesan  ",
     )
     """
     if BOTLOG:
@@ -61,13 +61,13 @@ async def purgeme(delme):
 
     smsg = await delme.client.send_message(
         delme.chat_id,
-        "☙`Berhasil Menghapus Kenangan,` " + str(count) + " `Kenangan Telah Dihapus`❧",
+        "➳`Berhasil Menghapus Kenangan,` " + str(count) + " `Kenangan Telah Dihapus` ",
     )
     """
     if BOTLOG:
         await delme.client.send_message(
             BOTLOG_CHATID,
-            "☙`Telah Menghapus Pesan,` " + str(count) + " Pesan Telah Dihapus `❧")
+            "➳`Telah Menghapus Pesan,` " + str(count) + " Pesan Telah Dihapus ` ")
     """
     await sleep(2)
     i = 1
@@ -84,10 +84,10 @@ async def delete_it(delme):
             """
             if BOTLOG:
                 await delme.client.send_message(
-                    BOTLOG_CHATID, "`Berhasil Menghapus Pesan `❧")
+                    BOTLOG_CHATID, "`Berhasil Menghapus Pesan ` ")
             """
         except rpcbaseerrors.BadRequestError:
-            await delme.edit("☙`Tidak Bisa Menghapus Pesan`")
+            await delme.edit(" `Tidak Bisa Menghapus Pesan`")
             """
             if BOTLOG:
                 await delme.client.send_message(
