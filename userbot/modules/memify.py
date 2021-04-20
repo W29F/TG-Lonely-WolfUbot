@@ -22,19 +22,19 @@ async def mim(event):
     if event.fwd_from:
         return
     if not event.reply_to_msg_id:
-        await event.edit("☙ Mohon Balas Ke Gambar Ketik `.mmf` [Teks Atas ; Teks Bawah] ❧")
+        await event.edit("➳ Mohon Balas Ke Gambar Ketik `.mmf` [Teks Atas ; Teks Bawah]  ")
         return
     reply_message = await event.get_reply_message()
     if not reply_message.media:
-        await event.edit("```☙ Mohon Balas Ke Gambar/Sticker/Gif ❧```")
+        await event.edit("```➳ Mohon Balas Ke Gambar/Sticker/Gif  ```")
         return
     reply_message.sender
     await bot.download_file(reply_message.media)
     if reply_message.sender.bot:
-        await event.edit("```☙ Balas ke pesan pengguna yang sebenarnya. ❧```")
+        await event.edit("```➳ Balas ke pesan pengguna yang sebenarnya.  ```")
         return
     else:
-        await event.edit("```☙ Mengubah Gambar Ini Mwahaha Saatnya Menulis ❧```")
+        await event.edit("```➳ Mengubah Gambar Ini Mwahaha Saatnya Menulis  ```")
         await asyncio.sleep(5)
         text = event.pattern_match.group(1)
         if event.reply_to_msg_id:
@@ -169,20 +169,20 @@ async def mim(event):
         return
     if not event.reply_to_msg_id:
         await event.edit(
-            "☙ Mohon Balas Ke Gambar Ketik `.mmf2` [Teks Atas ; Teks Bawah] ❧"
+            "➳ Mohon Balas Ke Gambar Ketik `.mmf2` [Teks Atas ; Teks Bawah]  "
         )
         return
     reply_message = await event.get_reply_message()
     if not reply_message.media:
-        await event.edit("```☙ Mohon Balas Ke Gambar/Sticker/Gif ❧```")
+        await event.edit("```➳ Mohon Balas Ke Gambar/Sticker/Gif  ```")
         return
     reply_message.sender
     await bot.download_file(reply_message.media)
     if reply_message.sender.bot:
-        await event.edit("```☙ Balas Ke Pesan Pengguna Yang Sebenarnya. ❧```")
+        await event.edit("```➳ Balas Ke Pesan Pengguna Yang Sebenarnya. ```")
         return
     else:
-        await event.edit("```☙ Mengubah Gambar Ini Mwahaha Saatnya Menulis ❧```")
+        await event.edit("```➳ Mengubah Gambar Ini Mwahaha Saatnya Menulis ```")
         await asyncio.sleep(5)
         text = event.pattern_match.group(1)
         if event.reply_to_msg_id:
